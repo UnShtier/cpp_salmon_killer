@@ -8,6 +8,11 @@ FSiterator::FSiterator(FileSystemV *fs)
 	this->fs = fs;
 }
 
+FSiterator::FSiterator()
+{
+
+}
+
 
 FSiterator::~FSiterator()
 {
@@ -36,4 +41,44 @@ bool FSiterator::IsDone()
 BYTE *FSiterator::GetCurrent()
 {
 	return fs->GetClusterBytes(1, currentClusterOffset);
+}
+
+//---------------------------------------------------------------------------//
+
+
+FSiteratorDecorator::FSiteratorDecorator(FSiterator *dk)
+{
+	currentClusterOffset = 0;
+	this->dk = dk;
+}
+
+
+FSiteratorDecorator::~FSiteratorDecorator()
+{
+
+}
+
+
+void FSiteratorDecorator::First()
+{
+	dk->First();
+}
+
+
+void FSiteratorDecorator::Next()
+{
+	dk->Next();
+	dk->Next();
+}
+
+
+bool FSiteratorDecorator::IsDone()
+{
+	return (fs->GetClusterCount() - currentClusterOffset) < 2;
+}
+
+
+BYTE *FSiteratorDecorator::GetCurrent()
+{
+	return dk->GetCurrent();
 }

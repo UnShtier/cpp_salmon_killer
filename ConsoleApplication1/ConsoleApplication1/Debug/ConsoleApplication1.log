@@ -1,11 +1,2 @@
-﻿  FileSystemHandler.cpp
-c:\users\unsht\source\repos\consoleapplication1\consoleapplication1\filesystemhandler.cpp(92): warning C4838: conversion from 'int' to 'WCHAR' requires a narrowing conversion
-c:\users\unsht\source\repos\consoleapplication1\consoleapplication1\filesystemhandler.cpp(112): warning C4018: '<': signed/unsigned mismatch
-  FSIterator.cpp
-  Interface.cpp
-  exFAT.cpp
-  FAT32.cpp
-  FileSystemV.cpp
-  NTFS.cpp
-  Generating Code...
+﻿  FSIterator.cpp
   ConsoleApplication1.vcxproj -> C:\Users\UnSht\source\repos\ConsoleApplication1\Debug\FileSystemHandlerPattern.exe

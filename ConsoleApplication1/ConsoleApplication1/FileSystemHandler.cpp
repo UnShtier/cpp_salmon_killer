@@ -109,7 +109,7 @@ FSiterator FileSystemHandler::GetIterator()
 
 void FileSystemHandler::DrawByteArray(BYTE *buffer, DWORD size)
 {
-	for (int i = 0; i < size; i++)
+	for (DWORD i = 0; i < size; i++)
 	{
 		std::cout << std::hex << (DWORD)buffer[i] << " ";
 		if ((i + 1) % 16 == 0)
